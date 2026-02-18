@@ -1,0 +1,14 @@
+2026-02-18 21:14:02,651 - INFO - ✅ UI instructions saved to reports/mlflow/mlflow_ui_instructions.txt
+2026-02-18 21:14:04,690 - WARNING - ⚠️ MLflow server is NOT running on port 5000
+2026-02-18 21:14:11,903 - INFO - 
+=== STARTING MLFLOW UI ===
+2026-02-18 21:14:13,955 - WARNING - ⚠️ MLflow server is NOT running on port 5000
+2026-02-18 21:14:13,956 - INFO - Starting MLflow UI with command: mlflow ui --port 5000 --backend-store-uri sqlite:///mlflow.db
+2026-02-18 21:14:18,485 - INFO - ✅ MLflow server is running on port 5000
+2026-02-18 21:14:18,486 - INFO - ✅ MLflow UI started at http://localhost:5000
+2026-02-18 21:31:38,850 - INFO - ✅ UI instructions saved to reports/mlflow/mlflow_ui_instructions.txt
+2026-02-18 21:31:38,853 - INFO - ✅ MLflow server is running on port 5000
+2026-02-18 21:48:52,519 - INFO - ✅ UI instructions saved to reports/mlflow/mlflow_ui_instructions.txt
+2026-02-18 21:48:52,522 - INFO - ✅ MLflow server is running on port 5000
+2026-02-18 21:49:20,100 - INFO - ✅ UI instructions saved to reports/mlflow/mlflow_ui_instructions.txt
+2026-02-18 21:49:20,103 - INFO - ✅ MLflow server is running on port 5000

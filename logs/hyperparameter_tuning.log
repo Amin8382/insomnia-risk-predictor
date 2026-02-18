@@ -1,0 +1,27 @@
+2026-02-18 21:51:20,706 - INFO - Loading data from data/processed/train_selected.csv
+2026-02-18 21:51:21,488 - INFO - Data shape: (800000, 22)
+2026-02-18 21:51:21,510 - INFO - Features: 21
+2026-02-18 21:51:21,514 - INFO - Target distribution:
+insomnia_class
+0    0.620461
+1    0.379539
+Name: proportion, dtype: float64
+2026-02-18 21:51:21,723 - INFO - 
+Train set: 640000 samples
+2026-02-18 21:51:21,723 - INFO - Test set: 160000 samples
+2026-02-18 21:51:22,153 - INFO - Created new experiment: Insomnia_Hyperparameter_Tuning
+2026-02-18 21:51:22,156 - INFO - 
+============================================================
+2026-02-18 21:51:22,157 - INFO - TUNING: Logistic Regression
+2026-02-18 21:51:22,157 - INFO - ============================================================
+2026-02-18 21:51:22,289 - INFO - Starting randomized search...
+2026-02-18 21:51:54,334 - INFO - 
+Best parameters: {'solver': 'newton-cg', 'penalty': 'l2', 'max_iter': 1000, 'fit_intercept': True, 'class_weight': 'balanced', 'C': np.float64(0.0006951927961775605)}
+2026-02-18 21:51:54,334 - INFO - Best CV F1: 0.6803
+2026-02-18 21:51:54,334 - INFO - Test F1: 0.6837
+2026-02-18 21:51:54,334 - INFO - Test ROC-AUC: 0.7900
+2026-02-18 21:52:03,539 - INFO - 
+============================================================
+2026-02-18 21:52:03,539 - INFO - TUNING: Random Forest
+2026-02-18 21:52:03,539 - INFO - ============================================================
+2026-02-18 21:52:03,551 - INFO - Starting randomized search...

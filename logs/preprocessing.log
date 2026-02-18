@@ -1,0 +1,373 @@
+2026-02-18 20:38:08,165 - INFO - ============================================================
+2026-02-18 20:38:08,165 - INFO - STARTING PREPROCESSING PIPELINE
+2026-02-18 20:38:08,166 - INFO - ============================================================
+2026-02-18 20:38:08,166 - INFO - Loading data from data/raw/patients_1m.csv
+2026-02-18 20:38:10,002 - INFO - Loaded full dataset: 1000000 rows
+2026-02-18 20:38:10,002 - INFO - Dataset shape: (1000000, 35)
+2026-02-18 20:38:10,003 - INFO - Columns: ['patient_id', 'sex', 'ethnicity', 'smoking_status', 'afib_or_flutter', 'asthma', 'obesity', 'cancer', 'hypertension', 'peripheral_vascular_disease', 'copd', 'pneumonia', 'psych_note_count', 'insomnia_billing_code_count', 'psychiatric_disorder', 'lipid_metabolism_disorder', 'joint_disorder_billing_code_count', 'emr_fact_count', 'bmi', 'cerebrovascular_disease', 'ckd_or_esrd', 'sleep_disorder_note_count', 'congestive_heart_failure', 'diabetes', 'anxiety_or_depression', 'osteoporosis', 'gastrointestinal_disorder', 'renal_failure', 'anx_depr_billing_code_count', 'insomnia_rx_count', 'age', 'female', 'coronary_artery_disease', 'insomnia_probability', 'insomnia_class']
+2026-02-18 20:38:10,004 - INFO - Identified 9 numerical columns
+2026-02-18 20:38:10,004 - INFO - Identified 3 categorical columns
+2026-02-18 20:38:10,004 - INFO - Identified 19 binary medical columns
+2026-02-18 20:38:10,004 - INFO - 
+=== MISSING VALUES ANALYSIS ===
+2026-02-18 20:38:10,037 - INFO - 
+Columns with missing values:
+2026-02-18 20:38:10,037 - INFO -   ethnicity: 78077 (7.81%)
+2026-02-18 20:38:10,038 - INFO -   insomnia_probability: 77975 (7.80%)
+2026-02-18 20:38:10,038 - INFO -   emr_fact_count: 77975 (7.80%)
+2026-02-18 20:38:10,038 - INFO -   bmi: 77793 (7.78%)
+2026-02-18 20:38:10,038 - INFO -   smoking_status: 77625 (7.76%)
+2026-02-18 20:38:10,038 - INFO - 
+=== HANDLING MISSING VALUES ===
+2026-02-18 20:38:10,058 - INFO - BMI: imputed with median (30.10)
+2026-02-18 20:38:10,074 - INFO - sex: imputed with mode (Female)
+2026-02-18 20:38:10,115 - INFO - ethnicity: imputed with mode (Caucasian)
+2026-02-18 20:38:10,159 - INFO - smoking_status: imputed with mode (Never)
+2026-02-18 20:38:10,160 - INFO - sleep_disorder_note_count: imputed with 0
+2026-02-18 20:38:10,160 - INFO - insomnia_billing_code_count: imputed with 0
+2026-02-18 20:38:10,160 - INFO - anx_depr_billing_code_count: imputed with 0
+2026-02-18 20:38:10,161 - INFO - psych_note_count: imputed with 0
+2026-02-18 20:38:10,161 - INFO - insomnia_rx_count: imputed with 0
+2026-02-18 20:38:10,161 - INFO - joint_disorder_billing_code_count: imputed with 0
+2026-02-18 20:38:10,168 - INFO - emr_fact_count: imputed with mean (533.62)
+2026-02-18 20:38:10,227 - INFO - 
+=== ENCODING CATEGORICAL VARIABLES ===
+2026-02-18 20:38:10,342 - INFO - sex: encoded into 2 categories
+2026-02-18 20:38:10,342 - INFO -   Categories: ['Female', 'Male']
+2026-02-18 20:38:10,474 - INFO - ethnicity: encoded into 6 categories
+2026-02-18 20:38:10,474 - INFO -   Categories: ['African American', 'Asian', 'Caucasian', 'Hispanic', 'Other', 'Unknown']
+2026-02-18 20:38:10,617 - INFO - smoking_status: encoded into 4 categories
+2026-02-18 20:38:10,617 - INFO -   Categories: ['Current', 'Never', 'Past', 'Unknown']
+2026-02-18 20:38:10,617 - INFO - 
+=== PREPARING FEATURE SET ===
+2026-02-18 20:38:10,617 - INFO - Total features selected: 31
+2026-02-18 20:38:10,618 - INFO - Features:
+2026-02-18 20:38:10,618 - INFO -   1. age
+2026-02-18 20:38:10,618 - INFO -   2. bmi
+2026-02-18 20:38:10,618 - INFO -   3. sleep_disorder_note_count
+2026-02-18 20:38:10,618 - INFO -   4. insomnia_billing_code_count
+2026-02-18 20:38:10,618 - INFO -   5. anx_depr_billing_code_count
+2026-02-18 20:38:10,619 - INFO -   6. psych_note_count
+2026-02-18 20:38:10,619 - INFO -   7. insomnia_rx_count
+2026-02-18 20:38:10,619 - INFO -   8. joint_disorder_billing_code_count
+2026-02-18 20:38:10,619 - INFO -   9. emr_fact_count
+2026-02-18 20:38:10,619 - INFO -   10. afib_or_flutter
+2026-02-18 20:38:10,619 - INFO -   11. asthma
+2026-02-18 20:38:10,619 - INFO -   12. obesity
+2026-02-18 20:38:10,619 - INFO -   13. cancer
+2026-02-18 20:38:10,619 - INFO -   14. hypertension
+2026-02-18 20:38:10,619 - INFO -   15. peripheral_vascular_disease
+2026-02-18 20:38:10,619 - INFO -   16. copd
+2026-02-18 20:38:10,619 - INFO -   17. pneumonia
+2026-02-18 20:38:10,619 - INFO -   18. psychiatric_disorder
+2026-02-18 20:38:10,620 - INFO -   19. lipid_metabolism_disorder
+2026-02-18 20:38:10,620 - INFO -   20. cerebrovascular_disease
+2026-02-18 20:38:10,620 - INFO -   21. ckd_or_esrd
+2026-02-18 20:38:10,620 - INFO -   22. congestive_heart_failure
+2026-02-18 20:38:10,620 - INFO -   23. diabetes
+2026-02-18 20:38:10,620 - INFO -   24. anxiety_or_depression
+2026-02-18 20:38:10,620 - INFO -   25. osteoporosis
+2026-02-18 20:38:10,620 - INFO -   26. gastrointestinal_disorder
+2026-02-18 20:38:10,620 - INFO -   27. renal_failure
+2026-02-18 20:38:10,620 - INFO -   28. coronary_artery_disease
+2026-02-18 20:38:10,620 - INFO -   29. sex_encoded
+2026-02-18 20:38:10,620 - INFO -   30. ethnicity_encoded
+2026-02-18 20:38:10,621 - INFO -   31. smoking_status_encoded
+2026-02-18 20:38:10,621 - INFO - 
+=== TRAIN-TEST SPLIT & SCALING ===
+2026-02-18 20:38:10,626 - INFO - Class distribution:
+  Class 0: 0.620
+  Class 1: 0.380
+2026-02-18 20:38:10,981 - INFO - Train set: 800000 samples
+2026-02-18 20:38:10,982 - INFO - Test set: 200000 samples
+2026-02-18 20:43:22,751 - INFO - Directories checked/created successfully
+2026-02-18 20:43:34,333 - INFO - ============================================================
+2026-02-18 20:43:34,334 - INFO - STARTING PREPROCESSING PIPELINE
+2026-02-18 20:43:34,334 - INFO - ============================================================
+2026-02-18 20:43:34,334 - INFO - Loading data from data/raw/patients_1m.csv
+2026-02-18 20:43:34,516 - INFO - Loaded sample of 100000 rows
+2026-02-18 20:43:34,516 - INFO - Dataset shape: (100000, 35)
+2026-02-18 20:43:34,516 - INFO - Columns: ['patient_id', 'sex', 'ethnicity', 'smoking_status', 'afib_or_flutter', 'asthma', 'obesity', 'cancer', 'hypertension', 'peripheral_vascular_disease', 'copd', 'pneumonia', 'psych_note_count', 'insomnia_billing_code_count', 'psychiatric_disorder', 'lipid_metabolism_disorder', 'joint_disorder_billing_code_count', 'emr_fact_count', 'bmi', 'cerebrovascular_disease', 'ckd_or_esrd', 'sleep_disorder_note_count', 'congestive_heart_failure', 'diabetes', 'anxiety_or_depression', 'osteoporosis', 'gastrointestinal_disorder', 'renal_failure', 'anx_depr_billing_code_count', 'insomnia_rx_count', 'age', 'female', 'coronary_artery_disease', 'insomnia_probability', 'insomnia_class']
+2026-02-18 20:43:34,516 - INFO - Identified 9 numerical columns
+2026-02-18 20:43:34,516 - INFO - Identified 3 categorical columns
+2026-02-18 20:43:34,517 - INFO - Identified 19 binary medical columns
+2026-02-18 20:43:34,517 - INFO - 
+=== MISSING VALUES ANALYSIS ===
+2026-02-18 20:43:34,521 - INFO - 
+Columns with missing values:
+2026-02-18 20:43:34,522 - INFO -   emr_fact_count: 7959 (7.96%)
+2026-02-18 20:43:34,522 - INFO -   insomnia_probability: 7959 (7.96%)
+2026-02-18 20:43:34,522 - INFO -   smoking_status: 7745 (7.75%)
+2026-02-18 20:43:34,522 - INFO -   ethnicity: 7699 (7.70%)
+2026-02-18 20:43:34,523 - INFO -   bmi: 7679 (7.68%)
+2026-02-18 20:43:34,523 - INFO - 
+=== HANDLING MISSING VALUES ===
+2026-02-18 20:43:34,525 - INFO - BMI: imputed with median (30.07)
+2026-02-18 20:43:34,526 - INFO - sex: imputed with mode (Female)
+2026-02-18 20:43:34,532 - INFO - ethnicity: imputed with mode (Caucasian)
+2026-02-18 20:43:34,538 - INFO - smoking_status: imputed with mode (Never)
+2026-02-18 20:43:34,538 - INFO - sleep_disorder_note_count: imputed with 0
+2026-02-18 20:43:34,539 - INFO - insomnia_billing_code_count: imputed with 0
+2026-02-18 20:43:34,539 - INFO - anx_depr_billing_code_count: imputed with 0
+2026-02-18 20:43:34,539 - INFO - psych_note_count: imputed with 0
+2026-02-18 20:43:34,539 - INFO - insomnia_rx_count: imputed with 0
+2026-02-18 20:43:34,539 - INFO - joint_disorder_billing_code_count: imputed with 0
+2026-02-18 20:43:34,540 - INFO - emr_fact_count: imputed with mean (532.16)
+2026-02-18 20:43:34,541 - INFO - insomnia_probability: imputed with median (0.25)
+2026-02-18 20:43:34,544 - INFO - ✅ All missing values handled successfully!
+2026-02-18 20:43:34,544 - INFO - 
+=== ENCODING CATEGORICAL VARIABLES ===
+2026-02-18 20:43:34,556 - INFO - sex: encoded into 2 categories
+2026-02-18 20:43:34,556 - INFO -   Categories: ['Female', 'Male']
+2026-02-18 20:43:34,569 - INFO - ethnicity: encoded into 6 categories
+2026-02-18 20:43:34,569 - INFO -   Categories: ['African American', 'Asian', 'Caucasian', 'Hispanic', 'Other', 'Unknown']
+2026-02-18 20:43:34,580 - INFO - smoking_status: encoded into 4 categories
+2026-02-18 20:43:34,580 - INFO -   Categories: ['Current', 'Never', 'Past', 'Unknown']
+2026-02-18 20:43:34,581 - INFO - 
+=== PREPARING FEATURE SET ===
+2026-02-18 20:43:34,581 - INFO - Total features selected: 31
+2026-02-18 20:43:34,581 - INFO - Features:
+2026-02-18 20:43:34,581 - INFO -   1. age
+2026-02-18 20:43:34,581 - INFO -   2. bmi
+2026-02-18 20:43:34,581 - INFO -   3. sleep_disorder_note_count
+2026-02-18 20:43:34,581 - INFO -   4. insomnia_billing_code_count
+2026-02-18 20:43:34,581 - INFO -   5. anx_depr_billing_code_count
+2026-02-18 20:43:34,581 - INFO -   6. psych_note_count
+2026-02-18 20:43:34,581 - INFO -   7. insomnia_rx_count
+2026-02-18 20:43:34,582 - INFO -   8. joint_disorder_billing_code_count
+2026-02-18 20:43:34,582 - INFO -   9. emr_fact_count
+2026-02-18 20:43:34,582 - INFO -   10. afib_or_flutter
+2026-02-18 20:43:34,582 - INFO -   11. asthma
+2026-02-18 20:43:34,582 - INFO -   12. obesity
+2026-02-18 20:43:34,582 - INFO -   13. cancer
+2026-02-18 20:43:34,582 - INFO -   14. hypertension
+2026-02-18 20:43:34,582 - INFO -   15. peripheral_vascular_disease
+2026-02-18 20:43:34,582 - INFO -   16. copd
+2026-02-18 20:43:34,582 - INFO -   17. pneumonia
+2026-02-18 20:43:34,582 - INFO -   18. psychiatric_disorder
+2026-02-18 20:43:34,582 - INFO -   19. lipid_metabolism_disorder
+2026-02-18 20:43:34,582 - INFO -   20. cerebrovascular_disease
+2026-02-18 20:43:34,583 - INFO -   21. ckd_or_esrd
+2026-02-18 20:43:34,583 - INFO -   22. congestive_heart_failure
+2026-02-18 20:43:34,583 - INFO -   23. diabetes
+2026-02-18 20:43:34,583 - INFO -   24. anxiety_or_depression
+2026-02-18 20:43:34,583 - INFO -   25. osteoporosis
+2026-02-18 20:43:34,583 - INFO -   26. gastrointestinal_disorder
+2026-02-18 20:43:34,583 - INFO -   27. renal_failure
+2026-02-18 20:43:34,583 - INFO -   28. coronary_artery_disease
+2026-02-18 20:43:34,583 - INFO -   29. sex_encoded
+2026-02-18 20:43:34,583 - INFO -   30. ethnicity_encoded
+2026-02-18 20:43:34,583 - INFO -   31. smoking_status_encoded
+2026-02-18 20:43:34,583 - INFO - 
+=== TRAIN-TEST SPLIT & SCALING ===
+2026-02-18 20:43:34,603 - INFO - Class distribution:
+  Class 0: 0.621
+  Class 1: 0.379
+2026-02-18 20:43:34,635 - INFO - Train set: 80000 samples
+2026-02-18 20:43:34,635 - INFO - Test set: 20000 samples
+2026-02-18 20:43:34,655 - INFO - Scaled 9 numerical features
+2026-02-18 20:43:34,657 - INFO - 
+Saving preprocessor to models/preprocessor.pkl
+2026-02-18 20:43:34,659 - INFO - ✅ Preprocessor saved successfully
+2026-02-18 20:43:34,659 - INFO - 
+=== SAVING PROCESSED DATA ===
+2026-02-18 20:43:35,356 - INFO - Training data saved to data/processed/train.csv
+2026-02-18 20:43:35,356 - INFO - Test data saved to data/processed/test.csv
+2026-02-18 20:43:35,428 - INFO - Sample (10k rows) saved to data/processed/train_sample.csv
+2026-02-18 20:43:35,429 - INFO - ============================================================
+2026-02-18 20:43:35,429 - INFO - ✅ PREPROCESSING PIPELINE COMPLETED
+2026-02-18 20:43:35,429 - INFO - ============================================================
+2026-02-18 21:22:53,654 - INFO - Directories checked/created successfully
+2026-02-18 21:23:01,788 - INFO - ============================================================
+2026-02-18 21:23:01,788 - INFO - STARTING PREPROCESSING PIPELINE
+2026-02-18 21:23:01,788 - INFO - ============================================================
+2026-02-18 21:23:01,788 - INFO - Loading data from data/raw/patients_1m.csv
+2026-02-18 21:23:02,960 - INFO - Loaded full dataset: 1000000 rows
+2026-02-18 21:23:02,961 - INFO - Dataset shape: (1000000, 35)
+2026-02-18 21:23:02,961 - INFO - Columns: ['patient_id', 'sex', 'ethnicity', 'smoking_status', 'afib_or_flutter', 'asthma', 'obesity', 'cancer', 'hypertension', 'peripheral_vascular_disease', 'copd', 'pneumonia', 'psych_note_count', 'insomnia_billing_code_count', 'psychiatric_disorder', 'lipid_metabolism_disorder', 'joint_disorder_billing_code_count', 'emr_fact_count', 'bmi', 'cerebrovascular_disease', 'ckd_or_esrd', 'sleep_disorder_note_count', 'congestive_heart_failure', 'diabetes', 'anxiety_or_depression', 'osteoporosis', 'gastrointestinal_disorder', 'renal_failure', 'anx_depr_billing_code_count', 'insomnia_rx_count', 'age', 'female', 'coronary_artery_disease', 'insomnia_probability', 'insomnia_class']
+2026-02-18 21:23:02,961 - INFO - Identified 9 numerical columns
+2026-02-18 21:23:02,962 - INFO - Identified 3 categorical columns
+2026-02-18 21:23:02,962 - INFO - Identified 19 binary medical columns
+2026-02-18 21:23:02,962 - INFO - 
+=== MISSING VALUES ANALYSIS ===
+2026-02-18 21:23:03,045 - INFO - 
+Columns with missing values:
+2026-02-18 21:23:03,045 - INFO -   ethnicity: 78077 (7.81%)
+2026-02-18 21:23:03,045 - INFO -   insomnia_probability: 77975 (7.80%)
+2026-02-18 21:23:03,045 - INFO -   emr_fact_count: 77975 (7.80%)
+2026-02-18 21:23:03,045 - INFO -   bmi: 77793 (7.78%)
+2026-02-18 21:23:03,046 - INFO -   smoking_status: 77625 (7.76%)
+2026-02-18 21:23:03,046 - INFO - 
+=== HANDLING MISSING VALUES ===
+2026-02-18 21:23:03,065 - INFO - BMI: imputed with median (30.10)
+2026-02-18 21:23:03,119 - INFO - sex: imputed with mode (Female)
+2026-02-18 21:23:03,174 - INFO - ethnicity: imputed with mode (Caucasian)
+2026-02-18 21:23:03,229 - INFO - smoking_status: imputed with mode (Never)
+2026-02-18 21:23:03,232 - INFO - sleep_disorder_note_count: imputed with 0
+2026-02-18 21:23:03,235 - INFO - insomnia_billing_code_count: imputed with 0
+2026-02-18 21:23:03,238 - INFO - anx_depr_billing_code_count: imputed with 0
+2026-02-18 21:23:03,241 - INFO - psych_note_count: imputed with 0
+2026-02-18 21:23:03,244 - INFO - insomnia_rx_count: imputed with 0
+2026-02-18 21:23:03,247 - INFO - joint_disorder_billing_code_count: imputed with 0
+2026-02-18 21:23:03,255 - INFO - emr_fact_count: imputed with mean (533.62)
+2026-02-18 21:23:03,271 - INFO - insomnia_probability: imputed with median (0.25)
+2026-02-18 21:23:03,355 - INFO - ✅ All missing values handled successfully!
+2026-02-18 21:23:03,355 - INFO - 
+=== ENCODING CATEGORICAL VARIABLES ===
+2026-02-18 21:23:03,468 - INFO - sex: encoded into 2 categories
+2026-02-18 21:23:03,469 - INFO -   Categories: ['Female', 'Male']
+2026-02-18 21:23:03,577 - INFO - ethnicity: encoded into 6 categories
+2026-02-18 21:23:03,577 - INFO -   Categories: ['African American', 'Asian', 'Caucasian', 'Hispanic', 'Other', 'Unknown']
+2026-02-18 21:23:03,689 - INFO - smoking_status: encoded into 4 categories
+2026-02-18 21:23:03,689 - INFO -   Categories: ['Current', 'Never', 'Past', 'Unknown']
+2026-02-18 21:23:03,689 - INFO - 
+=== PREPARING FEATURE SET ===
+2026-02-18 21:23:03,690 - INFO - Total features selected: 31
+2026-02-18 21:23:03,690 - INFO - Features:
+2026-02-18 21:23:03,690 - INFO -   1. age
+2026-02-18 21:23:03,690 - INFO -   2. bmi
+2026-02-18 21:23:03,690 - INFO -   3. sleep_disorder_note_count
+2026-02-18 21:23:03,690 - INFO -   4. insomnia_billing_code_count
+2026-02-18 21:23:03,690 - INFO -   5. anx_depr_billing_code_count
+2026-02-18 21:23:03,690 - INFO -   6. psych_note_count
+2026-02-18 21:23:03,691 - INFO -   7. insomnia_rx_count
+2026-02-18 21:23:03,691 - INFO -   8. joint_disorder_billing_code_count
+2026-02-18 21:23:03,691 - INFO -   9. emr_fact_count
+2026-02-18 21:23:03,691 - INFO -   10. afib_or_flutter
+2026-02-18 21:23:03,691 - INFO -   11. asthma
+2026-02-18 21:23:03,691 - INFO -   12. obesity
+2026-02-18 21:23:03,691 - INFO -   13. cancer
+2026-02-18 21:23:03,691 - INFO -   14. hypertension
+2026-02-18 21:23:03,691 - INFO -   15. peripheral_vascular_disease
+2026-02-18 21:23:03,691 - INFO -   16. copd
+2026-02-18 21:23:03,691 - INFO -   17. pneumonia
+2026-02-18 21:23:03,691 - INFO -   18. psychiatric_disorder
+2026-02-18 21:23:03,691 - INFO -   19. lipid_metabolism_disorder
+2026-02-18 21:23:03,691 - INFO -   20. cerebrovascular_disease
+2026-02-18 21:23:03,691 - INFO -   21. ckd_or_esrd
+2026-02-18 21:23:03,691 - INFO -   22. congestive_heart_failure
+2026-02-18 21:23:03,691 - INFO -   23. diabetes
+2026-02-18 21:23:03,691 - INFO -   24. anxiety_or_depression
+2026-02-18 21:23:03,693 - INFO -   25. osteoporosis
+2026-02-18 21:23:03,693 - INFO -   26. gastrointestinal_disorder
+2026-02-18 21:23:03,693 - INFO -   27. renal_failure
+2026-02-18 21:23:03,693 - INFO -   28. coronary_artery_disease
+2026-02-18 21:23:03,693 - INFO -   29. sex_encoded
+2026-02-18 21:23:03,693 - INFO -   30. ethnicity_encoded
+2026-02-18 21:23:03,693 - INFO -   31. smoking_status_encoded
+2026-02-18 21:23:03,693 - INFO - 
+=== TRAIN-TEST SPLIT & SCALING ===
+2026-02-18 21:23:03,868 - INFO - Class distribution:
+  Class 0: 0.620
+  Class 1: 0.380
+2026-02-18 21:23:04,199 - INFO - Train set: 800000 samples
+2026-02-18 21:23:04,200 - INFO - Test set: 200000 samples
+2026-02-18 21:23:04,378 - INFO - Scaled 9 numerical features
+2026-02-18 21:23:04,419 - INFO - 
+Saving preprocessor to models/preprocessor.pkl
+2026-02-18 21:23:04,420 - INFO - ✅ Preprocessor saved successfully
+2026-02-18 21:23:04,420 - INFO - 
+=== SAVING PROCESSED DATA ===
+2026-02-18 21:23:11,093 - INFO - Training data saved to data/processed/train.csv
+2026-02-18 21:23:11,093 - INFO - Test data saved to data/processed/test.csv
+2026-02-18 21:23:11,162 - INFO - Sample (10k rows) saved to data/processed/train_sample.csv
+2026-02-18 21:23:11,163 - INFO - ============================================================
+2026-02-18 21:23:11,163 - INFO - ✅ PREPROCESSING PIPELINE COMPLETED
+2026-02-18 21:23:11,163 - INFO - ============================================================
+2026-02-18 21:23:36,727 - INFO - Directories checked/created successfully
+2026-02-18 21:23:42,191 - INFO - ============================================================
+2026-02-18 21:23:42,192 - INFO - STARTING PREPROCESSING PIPELINE
+2026-02-18 21:23:42,192 - INFO - ============================================================
+2026-02-18 21:23:42,192 - INFO - Loading data from data/raw/patients_1m.csv
+2026-02-18 21:23:43,339 - INFO - Loaded full dataset: 1000000 rows
+2026-02-18 21:23:43,339 - INFO - Dataset shape: (1000000, 35)
+2026-02-18 21:23:43,339 - INFO - Columns: ['patient_id', 'sex', 'ethnicity', 'smoking_status', 'afib_or_flutter', 'asthma', 'obesity', 'cancer', 'hypertension', 'peripheral_vascular_disease', 'copd', 'pneumonia', 'psych_note_count', 'insomnia_billing_code_count', 'psychiatric_disorder', 'lipid_metabolism_disorder', 'joint_disorder_billing_code_count', 'emr_fact_count', 'bmi', 'cerebrovascular_disease', 'ckd_or_esrd', 'sleep_disorder_note_count', 'congestive_heart_failure', 'diabetes', 'anxiety_or_depression', 'osteoporosis', 'gastrointestinal_disorder', 'renal_failure', 'anx_depr_billing_code_count', 'insomnia_rx_count', 'age', 'female', 'coronary_artery_disease', 'insomnia_probability', 'insomnia_class']
+2026-02-18 21:23:43,339 - INFO - Identified 9 numerical columns
+2026-02-18 21:23:43,339 - INFO - Identified 3 categorical columns
+2026-02-18 21:23:43,340 - INFO - Identified 19 binary medical columns
+2026-02-18 21:23:43,340 - INFO - 
+=== MISSING VALUES ANALYSIS ===
+2026-02-18 21:23:43,427 - INFO - 
+Columns with missing values:
+2026-02-18 21:23:43,428 - INFO -   ethnicity: 78077 (7.81%)
+2026-02-18 21:23:43,428 - INFO -   insomnia_probability: 77975 (7.80%)
+2026-02-18 21:23:43,428 - INFO -   emr_fact_count: 77975 (7.80%)
+2026-02-18 21:23:43,428 - INFO -   bmi: 77793 (7.78%)
+2026-02-18 21:23:43,429 - INFO -   smoking_status: 77625 (7.76%)
+2026-02-18 21:23:43,429 - INFO - 
+=== HANDLING MISSING VALUES ===
+2026-02-18 21:23:43,449 - INFO - BMI: imputed with median (30.10)
+2026-02-18 21:23:43,505 - INFO - sex: imputed with mode (Female)
+2026-02-18 21:23:43,559 - INFO - ethnicity: imputed with mode (Caucasian)
+2026-02-18 21:23:43,613 - INFO - smoking_status: imputed with mode (Never)
+2026-02-18 21:23:43,617 - INFO - sleep_disorder_note_count: imputed with 0
+2026-02-18 21:23:43,619 - INFO - insomnia_billing_code_count: imputed with 0
+2026-02-18 21:23:43,622 - INFO - anx_depr_billing_code_count: imputed with 0
+2026-02-18 21:23:43,625 - INFO - psych_note_count: imputed with 0
+2026-02-18 21:23:43,628 - INFO - insomnia_rx_count: imputed with 0
+2026-02-18 21:23:43,631 - INFO - joint_disorder_billing_code_count: imputed with 0
+2026-02-18 21:23:43,640 - INFO - emr_fact_count: imputed with mean (533.62)
+2026-02-18 21:23:43,657 - INFO - insomnia_probability: imputed with median (0.25)
+2026-02-18 21:23:43,743 - INFO - ✅ All missing values handled successfully!
+2026-02-18 21:23:43,743 - INFO - 
+=== ENCODING CATEGORICAL VARIABLES ===
+2026-02-18 21:23:43,857 - INFO - sex: encoded into 2 categories
+2026-02-18 21:23:43,857 - INFO -   Categories: ['Female', 'Male']
+2026-02-18 21:23:43,960 - INFO - ethnicity: encoded into 6 categories
+2026-02-18 21:23:43,960 - INFO -   Categories: ['African American', 'Asian', 'Caucasian', 'Hispanic', 'Other', 'Unknown']
+2026-02-18 21:23:44,077 - INFO - smoking_status: encoded into 4 categories
+2026-02-18 21:23:44,077 - INFO -   Categories: ['Current', 'Never', 'Past', 'Unknown']
+2026-02-18 21:23:44,077 - INFO - 
+=== PREPARING FEATURE SET ===
+2026-02-18 21:23:44,077 - INFO - Total features selected: 31
+2026-02-18 21:23:44,078 - INFO - Features:
+2026-02-18 21:23:44,078 - INFO -   1. age
+2026-02-18 21:23:44,078 - INFO -   2. bmi
+2026-02-18 21:23:44,078 - INFO -   3. sleep_disorder_note_count
+2026-02-18 21:23:44,078 - INFO -   4. insomnia_billing_code_count
+2026-02-18 21:23:44,078 - INFO -   5. anx_depr_billing_code_count
+2026-02-18 21:23:44,078 - INFO -   6. psych_note_count
+2026-02-18 21:23:44,078 - INFO -   7. insomnia_rx_count
+2026-02-18 21:23:44,078 - INFO -   8. joint_disorder_billing_code_count
+2026-02-18 21:23:44,078 - INFO -   9. emr_fact_count
+2026-02-18 21:23:44,078 - INFO -   10. afib_or_flutter
+2026-02-18 21:23:44,078 - INFO -   11. asthma
+2026-02-18 21:23:44,079 - INFO -   12. obesity
+2026-02-18 21:23:44,079 - INFO -   13. cancer
+2026-02-18 21:23:44,079 - INFO -   14. hypertension
+2026-02-18 21:23:44,079 - INFO -   15. peripheral_vascular_disease
+2026-02-18 21:23:44,079 - INFO -   16. copd
+2026-02-18 21:23:44,079 - INFO -   17. pneumonia
+2026-02-18 21:23:44,079 - INFO -   18. psychiatric_disorder
+2026-02-18 21:23:44,079 - INFO -   19. lipid_metabolism_disorder
+2026-02-18 21:23:44,079 - INFO -   20. cerebrovascular_disease
+2026-02-18 21:23:44,079 - INFO -   21. ckd_or_esrd
+2026-02-18 21:23:44,079 - INFO -   22. congestive_heart_failure
+2026-02-18 21:23:44,079 - INFO -   23. diabetes
+2026-02-18 21:23:44,079 - INFO -   24. anxiety_or_depression
+2026-02-18 21:23:44,080 - INFO -   25. osteoporosis
+2026-02-18 21:23:44,080 - INFO -   26. gastrointestinal_disorder
+2026-02-18 21:23:44,080 - INFO -   27. renal_failure
+2026-02-18 21:23:44,080 - INFO -   28. coronary_artery_disease
+2026-02-18 21:23:44,080 - INFO -   29. sex_encoded
+2026-02-18 21:23:44,080 - INFO -   30. ethnicity_encoded
+2026-02-18 21:23:44,080 - INFO -   31. smoking_status_encoded
+2026-02-18 21:23:44,080 - INFO - 
+=== TRAIN-TEST SPLIT & SCALING ===
+2026-02-18 21:23:44,244 - INFO - Class distribution:
+  Class 0: 0.620
+  Class 1: 0.380
+2026-02-18 21:23:44,570 - INFO - Train set: 800000 samples
+2026-02-18 21:23:44,570 - INFO - Test set: 200000 samples
+2026-02-18 21:23:44,735 - INFO - Scaled 9 numerical features
+2026-02-18 21:23:44,773 - INFO - 
+Saving preprocessor to models/preprocessor.pkl
+2026-02-18 21:23:44,774 - INFO - ✅ Preprocessor saved successfully
+2026-02-18 21:23:44,774 - INFO - 
+=== SAVING PROCESSED DATA ===
+2026-02-18 21:23:51,215 - INFO - Training data saved to data/processed/train.csv
+2026-02-18 21:23:51,216 - INFO - Test data saved to data/processed/test.csv
+2026-02-18 21:23:51,281 - INFO - Sample (10k rows) saved to data/processed/train_sample.csv
+2026-02-18 21:23:51,282 - INFO - ============================================================
+2026-02-18 21:23:51,283 - INFO - ✅ PREPROCESSING PIPELINE COMPLETED
+2026-02-18 21:23:51,283 - INFO - ============================================================
