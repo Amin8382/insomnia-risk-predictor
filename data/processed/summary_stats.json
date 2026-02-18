@@ -1,0 +1,16 @@
+{
+  "dataset_info": {
+    "total_patients": 1000000,
+    "total_features": 35,
+    "file_size_mb": 136.83293628692627
+  },
+  "target_distribution": {
+    "insomnia_count": 379539,
+    "no_insomnia_count": 620461,
+    "insomnia_rate": 0.379539
+  },
+  "missing_values": {
+    "columns_with_missing": 5,
+    "total_missing_cells": 389445
+  }
+}
