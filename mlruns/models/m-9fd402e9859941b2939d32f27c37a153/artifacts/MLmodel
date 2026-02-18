@@ -1,0 +1,47 @@
+artifact_path: file:///C:/Users/gasmi/OneDrive/Documents/insomnia-risk-predictor/mlruns/models/m-9fd402e9859941b2939d32f27c37a153/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+is_signature_from_type_hint: false
+mlflow_version: 3.9.0
+model_id: m-9fd402e9859941b2939d32f27c37a153
+model_size_bytes: 75382883
+model_uuid: m-9fd402e9859941b2939d32f27c37a153
+prompts: null
+run_id: 4f5d276835de4ad792b848b8f4bccad8
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "sleep_disorder_note_count", "required": true},
+    {"type": "double", "name": "insomnia_billing_code_count", "required": true}, {"type":
+    "double", "name": "anx_depr_billing_code_count", "required": true}, {"type": "double",
+    "name": "emr_fact_count", "required": true}, {"type": "double", "name": "bmi",
+    "required": true}, {"type": "double", "name": "insomnia_rx_count", "required":
+    true}, {"type": "double", "name": "psych_note_count", "required": true}, {"type":
+    "long", "name": "obesity", "required": true}, {"type": "double", "name": "joint_disorder_billing_code_count",
+    "required": true}, {"type": "long", "name": "renal_failure", "required": true},
+    {"type": "long", "name": "ethnicity_encoded", "required": true}, {"type": "long",
+    "name": "gastrointestinal_disorder", "required": true}, {"type": "long", "name":
+    "diabetes", "required": true}, {"type": "long", "name": "ckd_or_esrd", "required":
+    true}, {"type": "long", "name": "smoking_status_encoded", "required": true}, {"type":
+    "long", "name": "hypertension", "required": true}, {"type": "long", "name": "congestive_heart_failure",
+    "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-02-18 19:55:37.103747'

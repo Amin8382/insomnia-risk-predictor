@@ -1,0 +1,19 @@
+{
+  "sleep_disorder_note_count": 1.5067260855691627,
+  "insomnia_billing_code_count": 0.3292568962525855,
+  "anx_depr_billing_code_count": 0.2054353993437847,
+  "emr_fact_count": 0.08214008273357183,
+  "bmi": 0.005793108128408245,
+  "insomnia_rx_count": 0.04712460196665406,
+  "psych_note_count": 0.027607791742873526,
+  "obesity": -0.03716278908222083,
+  "joint_disorder_billing_code_count": 0.0412116593031303,
+  "renal_failure": 0.051000272795640456,
+  "ethnicity_encoded": 0.0033339694207781146,
+  "gastrointestinal_disorder": -0.017486277629783206,
+  "diabetes": -0.021279378097474662,
+  "ckd_or_esrd": 0.004989581652207229,
+  "smoking_status_encoded": -0.003867222217927914,
+  "hypertension": -0.020386980104045778,
+  "congestive_heart_failure": 0.01940893359294099
+}
