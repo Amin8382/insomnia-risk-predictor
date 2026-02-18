@@ -1,0 +1,52 @@
+============================================================
+FEATURE SELECTION REPORT
+============================================================
+Total features analyzed: 31
+
+
+TOP 10 CORRELATIONS:
+  sleep_disorder_note_count: 0.4399
+  insomnia_billing_code_count: 0.1255
+  anx_depr_billing_code_count: 0.0782
+  emr_fact_count: 0.0266
+  psych_note_count: 0.0216
+  insomnia_rx_count: 0.0171
+  bmi: 0.0151
+  joint_disorder_billing_code_count: 0.0121
+  age: -0.0031
+  hypertension: -0.0027
+
+TOP 10 EFFECT SIZES (Cohen's d):
+  sleep_disorder_note_count: d=0.9237, p=0.0000
+  insomnia_billing_code_count: d=0.2459, p=0.0000
+  anx_depr_billing_code_count: d=0.1571, p=0.0000
+  emr_fact_count: d=0.0528, p=0.0000
+  psych_note_count: d=0.0439, p=0.0000
+  insomnia_rx_count: d=0.0347, p=0.0000
+  bmi: d=0.0305, p=0.0000
+  joint_disorder_billing_code_count: d=0.0247, p=0.0000
+  anxiety_or_depression: d=0.0034, p=0.1415
+  afib_or_flutter: d=0.0031, p=0.1782
+
+FINAL SELECTED FEATURES:
+  1. sleep_disorder_note_count
+  2. insomnia_billing_code_count
+  3. anx_depr_billing_code_count
+  4. emr_fact_count
+  5. psych_note_count
+  6. insomnia_rx_count
+  7. bmi
+  8. joint_disorder_billing_code_count
+  9. age
+  10. hypertension
+  11. coronary_artery_disease
+  12. anxiety_or_depression
+  13. afib_or_flutter
+  14. osteoporosis
+  15. copd
+  16. diabetes
+  17. ethnicity_encoded
+  18. pneumonia
+  19. smoking_status_encoded
+  20. obesity
+  21. congestive_heart_failure

@@ -1,0 +1,64 @@
+
+============================================================
+              MLFLOW UI INSTRUCTIONS
+============================================================
+
+1. START MLFLOW UI:
+   -----------------
+   Method 1 - From Python:
+      python code/04_mlflow_tracking.py --start-ui
+   
+   Method 2 - Command Line:
+      mlflow ui --port 5000 --backend-store-uri sqlite:///mlflow.db
+   
+   Method 3 - Using this script:
+      from 04_mlflow_tracking import MLflowManager
+      manager = MLflowManager()
+      manager.start_mlflow_ui()
+
+2. ACCESS THE UI:
+   ----------------
+   * Open your browser and go to: http://localhost:5000
+   * Default port is 5000, change with --port if needed
+
+3. UI NAVIGATION:
+   ---------------
+   * EXPERIMENTS: View all experiments in the left sidebar
+   * RUNS: Click on experiment to see all runs
+   * METRICS: Compare metrics across runs with parallel coordinates
+   * PARAMETERS: View and compare hyperparameters
+   * ARTIFACTS: Download models, plots, and other artifacts
+   * REGISTRY: Manage registered models (Models tab)
+
+4. KEY FEATURES:
+   --------------
+   * Compare runs: Select runs and click "Compare"
+   * Search runs: Use search bar to filter runs
+   * Download artifacts: Click on artifact to download
+   * Register models: Promote best runs to Model Registry
+   * Share results: Export runs as CSV or share experiment link
+
+5. TROUBLESHOOTING:
+   -----------------
+   * Port in use: Try different port: mlflow ui --port 5001
+   * DB locked: Close other MLflow instances
+   * No runs: Check backend-store-uri matches your mlflow.db location
+
+6. USEFUL COMMANDS:
+   -----------------
+   * List experiments: mlflow experiments list
+   * Delete experiment: mlflow experiments delete --experiment-id <ID>
+   * Download artifacts: mlflow artifacts download --run-id <ID>
+   * Serve model: mlflow models serve -m runs:/<RUN_ID>/model -p 1234
+
+7. MODEL SERVING:
+   ---------------
+   Once you have a registered model, serve it with:
+      mlflow models serve -m "models:/insomnia_best_model/Production" -p 1234
+   
+   Test with:
+      curl -X POST -H "Content-Type: application/json" ^
+           -d "{"data": [<your_features>]}" ^
+           http://localhost:1234/invocations
+
+For more details: https://www.mlflow.org/docs/latest/tracking.html
