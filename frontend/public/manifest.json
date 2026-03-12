@@ -1,0 +1,9 @@
+{
+  "short_name": "Insomnia Risk",
+  "name": "Insomnia Risk Predictor",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0ea5e9",
+  "background_color": "#ffffff"
+}
