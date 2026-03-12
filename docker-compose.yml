@@ -1,0 +1,40 @@
+﻿version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: insomnia-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/backend
+      - ./models:/app/models
+      - sqlite_data:/app/backend/insomnia.db
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PORT=8000
+    networks:
+      - insomnia-network
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: insomnia-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - insomnia-network
+    restart: unless-stopped
+
+volumes:
+  sqlite_data:
+
+networks:
+  insomnia-network:
+    driver: bridge
